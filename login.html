@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>ログイン</title>
+</head>
+<body>
+  <h2>ログイン</h2>
+
+  <form action="send_code.php" method="POST">
+    <label>メールアドレスまたは電話番号：</label><br>
+    <input type="text" name="identifier" required><br><br>
+
+    <label>パスワード：</label><br>
+    <input type="password" name="password" required><br><br>
+
+    <button type="submit">認証コードを送る</button>
+  </form>
+
+  <br>
+  <a href="forgot.html">パスワードを忘れた場合はこちら</a>
+</body>
+</html>
