@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ノート投稿</title>
+</head>
+<body>
+  <h2>ノートを投稿する</h2>
+  <form method="POST" action="upload.php" enctype="multipart/form-data">
+    文章：<br>
+    <textarea name="text" rows="5" cols="40"></textarea><br><br>
+    画像：<br>
+    <input type="file" name="image"><br><br>
+    <button type="submit">投稿</button>
+  </form>
+</body>
+</html>
