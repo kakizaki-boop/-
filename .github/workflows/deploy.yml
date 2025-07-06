@@ -1,0 +1,24 @@
+name: CI/CD Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Deploy via SFTP to XREA
+        uses: SamKirkland/FTP-Deploy-Action@4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          protocol: sftp
+          port: 22
+          local-dir: '.'             
+          remote-dir: '/public_html/newstudysns12.shop/learning_app'
