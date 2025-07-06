@@ -10,18 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # リポジトリをチェックアウト
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # SFTP で XREA サーバーにデプロイ
       - name: Deploy via SFTP to XREA
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: samkirkland/ftp-deploy-action@4.3.0
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           protocol: sftp
           port: 22
-          local-dir: '.'             
+          local-dir: '.'
           remote-dir: '/public_html/newstudysns12.shop/learning_app'
