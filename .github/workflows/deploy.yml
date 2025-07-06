@@ -13,13 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy via SFTP to XREA
-        uses: samkirkland/ftp-deploy-action@master
+      - name: Deploy via FTP to XREA
+        uses: samkirkland/ftp-deploy-action@4.3.1
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          protocol: sftp
-          port: 22
-          local-dir: '.'
-          remote-dir: '/public_html/newstudysns12.shop/learning_app'
+          server:      ${{ secrets.FTP_HOST }}
+          username:    ${{ secrets.FTP_USER }}
+          password:    ${{ secrets.FTP_PASS }}
+          protocol:    ftp               # sftp は使えません
+          port:        21                # FTP の標準ポート
+          local-dir:   '.'               
+          server-dir:  '/public_html/newstudysns12.shop/learning_app'
