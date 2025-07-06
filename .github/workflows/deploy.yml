@@ -10,10 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      # リポジトリをチェックアウト
+      - name: Checkout code
+        uses: actions/checkout@v2
 
+      # SFTP で XREA サーバーにデプロイ
       - name: Deploy via SFTP to XREA
-        uses: SamKirkland/FTP-Deploy-Action@4
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
