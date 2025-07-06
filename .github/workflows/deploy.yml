@@ -19,7 +19,7 @@ jobs:
           server:      ${{ secrets.FTP_HOST }}
           username:    ${{ secrets.FTP_USER }}
           password:    ${{ secrets.FTP_PASS }}
-          protocol:    ftp               # sftp は使えません
-          port:        21                # FTP の標準ポート
-          local-dir:   '.'               
+          protocol:    ftp
+          port:        21
+          local-dir:   './'                                # ← フォルダ指定（末尾にスラッシュ）
           server-dir:  '/public_html/newstudysns12.shop/learning_app'
